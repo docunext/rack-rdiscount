@@ -14,8 +14,7 @@ module Rack
 
     def each(&block)
       @response.each { |x|
-        markdown = RDiscount.new("#{x}")
-        yield markdown.to_html
+        yield RDiscount.new(x).to_html
       }
     end
   end

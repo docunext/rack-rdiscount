@@ -10,6 +10,15 @@ Status
 This isn't done yet, but it functions.
 
 
+Usage
+-----
+
+<pre class="sh_ruby">
+use Rack::RackDiscount, :extension => 'mdwn'
+</pre>
+
+Note: extension option does nothing at the moment.
+
 Legal
 -----
 

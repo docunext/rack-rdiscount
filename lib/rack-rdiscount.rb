@@ -2,7 +2,7 @@ require "rdiscount"
 
 module Rack
   class RackDiscount
-    def initialize(app)
+    def initialize(app, options)
       @my_path_info = String.new
       @app = app
     end

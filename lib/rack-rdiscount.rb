@@ -1,3 +1,6 @@
+# Copyright: Savonix Corporation, 2009
+# Author:    Albert Lash
+# License:   MIT
 require "rdiscount"
 
 module Rack

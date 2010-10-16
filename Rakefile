@@ -1,6 +1,26 @@
 require 'rubygems'
 require 'rake'
 
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = "rack-rdiscount"
+    gem.summary = %{Markdown rack middleware.}
+    gem.description = %Q{A rack middleware for converting markdown to html.}
+    gem.email = 'albert.lash@docunext.com'
+    gem.homepage = 'http://www.docunext.com/'
+    gem.authors = ['Albert Lash']
+    gem.rubyforge_project = ''
+  end
+  Jeweler::GemcutterTasks.new
+  Jeweler::RubyforgeTasks.new do |rubyforge|
+    rubyforge.doc_task = 'rdoc'
+  end
+rescue LoadError
+  puts 'Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler'
+end
+
+
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'

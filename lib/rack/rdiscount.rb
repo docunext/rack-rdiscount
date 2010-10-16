@@ -23,6 +23,8 @@ module Rack
       # If we've made it this far, we can alter the headers
       headers.delete('Content-Length')
       headers['Content-Length'] = newbody.length.to_s
+      headers.delete('Content-Type')
+      headers['Content-Type'] = 'text/html'
 
       [status, headers, newbody] 
     end
@@ -34,6 +36,9 @@ module Rack
           newbody << part.to_s
         }
         return newbody.join('')
+      end
+      def wrap(tag='div')
+        #
       end
   end
 end

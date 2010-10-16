@@ -19,7 +19,7 @@ module Rack
       return original_response unless headers["Content-Type"].to_s == 'text/plain'
       mdwn = getResponse(body)
       
-      newbody = RDiscount.new(mdwn).to_html
+      newbody = '<div id="page-content">' + RDiscount.new(mdwn).to_html + '</div>'
       # If we've made it this far, we can alter the headers
       headers.delete('Content-Length')
       headers['Content-Length'] = newbody.length.to_s

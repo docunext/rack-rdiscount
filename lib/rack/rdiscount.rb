@@ -18,6 +18,7 @@ module Rack
 
       return original_response unless headers["Content-Type"].to_s == 'text/plain'
       mdwn = getResponse(body)
+      body.close if body.respond_to?(:close)
       
       newbody = '<div id="page-content">' + RDiscount.new(mdwn).to_html + '</div>'
       # If we've made it this far, we can alter the headers
@@ -31,6 +32,7 @@ module Rack
 
     private
       def getResponse(body)
+        return body unless body.respond_to?(:each)
         newbody = []
         body.each { |part|
           newbody << part.to_s

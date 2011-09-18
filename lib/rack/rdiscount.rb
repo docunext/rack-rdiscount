@@ -1,11 +1,9 @@
 # Copyright: Savonix Corporation, 2009
 # Author:    Albert Lash
 # License:   MIT
-require "rdiscount"
-
 module Rack
   class RackDiscount
-    def initialize(app, options)
+    def initialize(app, options={})
       @my_path_info = String.new
       @app = app
     end
@@ -44,4 +42,3 @@ module Rack
       end
   end
 end
-

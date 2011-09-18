@@ -11,6 +11,7 @@ begin
     gem.homepage = 'http://www.docunext.com/'
     gem.authors = ['Albert Lash']
     gem.rubyforge_project = ''
+    gem.add_dependency "rdiscount"
   end
   Jeweler::GemcutterTasks.new
   Jeweler::RubyforgeTasks.new do |rubyforge|
